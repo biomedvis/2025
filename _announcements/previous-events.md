@@ -14,3 +14,5 @@ link:
 [Bio+Med+Vis Spring School 2022](https://biomedvis.github.io/2022)
 
 [Bio+Med+Vis Spring School 2023](https://biomedvis.github.io/2023)
+
+[Bio+Med+Vis Spring School 2024](https://biomedvis.github.io/2024)
