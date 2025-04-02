@@ -8,7 +8,7 @@ intro_image_hide_on_mobile: true
 
 # Summer School
 
-We announce the fourth Summer School on Biological and Medical Visualization: the **Bio+Med+Vis Summer School**!
+We announce the fifth Summer School on Biological and Medical Visualization: the **Bio+Med+Vis Summer School**!
 
 The Summer School will be held on **September 30th, 2025 in Delft, The Netherlands**. The event is collocated with the EG VCBM conference (October 2nd-3rd) and VCBM Fachgruppen Meeting (October 1st) in Delft, The Netherlands. Participants can anticipate excellent **talks**, given by experts in Biological and Medical Visualization.
 
