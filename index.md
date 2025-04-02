@@ -16,6 +16,7 @@ The Summer School is primarily targeting M.Sc. and Ph.D. students in Computer Sc
 
 The registration for the Summer School is **free of charge** and it will provide access to an educational platform, where all materials will be available afterward. Note that you can attend only the Summer School if you do not wish to attend VCBM which charges additional fees.
 
+The students can obtain a certificate of attendance, which will be sent upon request. Based on the rules of the student’s home institution, the participant may be able to obtain ECTS points for participating at the Bio+Med+Vis School. However, as different institutions have different requirements, it is impossible for us to unify this process. Therefore, we are leaving it up to the discretion of the mentor/supervisor/institution to decide granting ECTS for participation at the Bio+Med+Vis School.
 
 We are looking forward to seeing you at the Bio+Med+Vis Summer School! 
 
