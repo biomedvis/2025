@@ -5,7 +5,7 @@ draft: false
 image: "images/team/jan-byska.jpg"
 jobtitle: "Organization Committee"
 weburl: "https://www.muni.cz/en/people/207879-jan-byska"
-weight: 1
+weight: 5
 layout: team
 promoted: true
 ---

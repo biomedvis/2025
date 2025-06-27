@@ -97,12 +97,18 @@ layout: default
 }
 .program .speaker .details .photo{
 	float: left;
+	width: 34%;
 	margin: 0px;
 	padding: 0px;
 }
-.program .speaker .details .photo img{
-	width: 120px;
+.program .speaker .details .abstract{
 	margin: 0px;
+	padding: 5px;
+}
+.program .speaker .details .photo img{
+	width: 100%;
+	margin: 0px;
+	padding: 10px;
 }
 .program .speaker .details .photoinfo{
 	font-size:8pt;
@@ -114,8 +120,11 @@ layout: default
 .program .speaker .details .bio{
 	margin-left:110px;
 	padding-left:25px;
+	padding: 5px;
 }
 .program .speaker .details .bio-no-photo{
+	margin: 0px;
+	padding: 5px;
 }
 .program .video{
 	padding-top:10px;
@@ -132,152 +141,114 @@ layout: default
     <div class="col-12">
       <div class="service service-single">
         <h1 class="title">{{page.title}}</h1>
-		<h2>Comming soon.</a></h2>
+		<h5>Here you can find information about the tutorials and program you can look forward to during the summer school. Precise schedule will be posted soon.
+			Please note, that the tutorials will be hands-on and we strongly recommend you to bring your own notebook, as technical equipment will not be provided. 
+		</a></h5>
 		<br/><br/>
-		<div class="content">	
-			{{content}}
-			<div class="table-responsive">
-				<table class="table table-program">
-				<tr>
-					<th class="cet">CEST</div>
-					<th class="day">
-						<span class="weekday">Tuesday,</span>
-						<span class="date">30th September 2025</span>
-					</th>
-				</tr>	
-				<!-- generate program based on the 5min intervals -->
-				{% assign slot_size_min = 5 %}
-				{% for hour in (8..18) %}
-					{% if hour < 10 %}
-						{% assign hour_text = '0' | append : hour %}
-					{% else %}
-						{% assign hour_text = hour %}
-					{% endif %}
-					{% assign hour_text_next = hour_text %}
-					{% for min in (0..11) %}
-						{% assign minutes_text = min | times : slot_size_min %}
-						{% assign minutes_text_next = min | plus : 1 | times : slot_size_min %}
-						{% if min == 0 %}
-							{% assign minutes_text = '00' %}
-							{% assign minutes_text_next = '05' %}
-							
-						{% endif %}
-						{% if min == 1 %}
-							{% assign minutes_text = '05' %}
-						{% endif %}
-						{% if min == 11 %}
-							{% assign minutes_text_next = '00' %}
-							{% assign hour_text_next = hour_text | plus: 1 %}
-						{% endif %}
-						{% assign start_time = hour_text | append: ':' | append : minutes_text %}
-						{% assign slot_text = hour_text | append: ':' | append : minutes_text | append: ' - ' | append: hour_text_next | append: ':' | append : minutes_text_next  %}
-						
-						<!-- creates line in the program for each interval -->
-						<tr>					
-							{% for day_in_week in days%}
-								{% assign data = site.data.program | where: "day", day_in_week | where: "start", start_time %}
-								{% if data.size > 0 %}			
-									{% assign speaker = data[0] %}									
-									<!-- computes the number of slots the lecture will take -->
-									{% assign time_start = speaker.start | split : ":" %}
-									{% assign time_end = speaker.end | split : ":" %}
-									{% assign hours = time_end[0] | minus : time_start[0] %}
-									{% assign minutes = time_end[1] | minus : time_start[1] %}
-									{% assign lenght = hours | times : 60 | plus : minutes | divided_by : slot_size_min %}
-								
-									
-									{% if forloop.first %}
-										{% assign merged_slot_text = speaker.start | append: ' - ' | append : speaker.end %}
-										<td rowspan={{lenght}} class="time">{{merged_slot_text}}</td>
-									{% endif %}
-								
-									<!-- generates the lecture slot by merging multiple smaller slots -->
-									<td rowspan={{lenght}} style="height:{{lenght | times : 10}}px">
-										<div class="talk-content" style="background-image: url({{ "/images/program/" | relative_url }}{{speaker.icon}});"> 
-											<div class="spaker-info">
-												<div class="title">{{speaker.title}}</div> 
-												<div class="speaker">
-													<a href="#{{speaker.name}}">{{speaker.name}} {% if speaker.name2 %} & {{ speaker.name2 }}{% endif%}</a>
-												</div>
-												{% if speaker.room %}
-												<div class="room">(room: {{speaker.room}})</div>
-												{% endif%}
-											</div>
-										</div>
-									</td>
-								{% endif %}
-							{% endfor %}
-						</tr>
-					{% endfor %}
-				{% endfor %}
-				</table>
-				<!--<div class="legend">
-					<img src = "{{ "/images/program/legend.png" | relative_url }}" />
-				</div>-->
-			</div>
-			
-			<!-- the detailed program -->
+		<div class="content">
 			<div class="program" id="speakers">
-			{% for day_in_week in days%}
-				{% assign data = site.data.program | where: "day", day_in_week | sort: "start" %}
-				{% for speaker in data %}
-					{% if forloop.first %}
-					<!--<div class="day">{{ day_in_week }}</div>-->
-					{% endif %}
-					{% if speaker.name != nil or speaker.title != nil %}
-					<div class="speaker" id="{{speaker.name}}">
-						<div class="first-line">
-							<span class="slot">{{ speaker.start }} - {{ speaker.end }}</span>
-							<span class="title">{{ speaker.title }}</span><br/>
+					<div class="speaker" id="Inviwo">
+						<div class="first-line">							
+							<span class="title">Tutorial on Spatial Data Visualization with Inviwo</span><br/>
+							<span class="slot">Time: 2 hours, precise time TBA </span>
 						</div>
-						{% if speaker.name %} 
-						<div class="name">Speaker: {{ speaker.name }} {% if speaker.name2 %} & {{ speaker.name2 }}{% endif%} {% if speaker.affiliation %}({{ speaker.affiliation }}){% endif%}</div>
-						{% endif %}
-						{% if speaker.room %}
-						<div class="room">Room: {{speaker.room}}</div>
-						{% endif%}
-						
-						{% if speaker.bio %}
-						<div class="details">
-							{% if speaker.photo %}
-							<div class="photo">
-								<img src="{{ "/images/speakers/" | relative_url }}{{ speaker.photo }}" atl="{{ speaker.name }}" />
-								{% if speaker.photoinfo %} <span class="photoinfo">{{ speaker.photoinfo }}</p> {% endif %}
-							</div>
-							<div class="bio">{{ speaker.bio }}</div>
-							{% else %}
-							<div class="bio-no-photo">{{ speaker.bio }}</div>
-							{% endif %}
-						</div>
-						{% endif %}
-						
-						{% if speaker.bio2 %}
-						<div class="details" style="padding-top:10px;">
-							{% if speaker.photo2 %}
-							<div class="photo">
-								<img src="{{ "/images/speakers/" | relative_url }}{{ speaker.photo2 }}" atl="{{ speaker.name2 }}" />
-							</div>
-							<div class="bio">{{ speaker.bio2 }}</div>
-							{% else %}
-							<div class="bio-no-photo">{{ speaker.bio2 }}</div>
-							{% endif %}
-						</div>
-						{% endif %}
-
-						{% if speaker.abstract %}
+						<div class="name">Martin Falk</div>
 						<br/>
-						<div class="abstract"><strong>Abstract:</strong> {{ speaker.abstract }}</div>
-						{% endif %}
-						
-						{% if speaker.video %}
-						<div class="video">
-							<iframe width="560" height="315" src="https://www.youtube.com/embed/{{speaker.video}}" title="{{speaker.title}} by {{speaker.name}}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+						<div class="details">
+							<div class="photo">
+								<img src="/2025/images/program/inviwo.png" atl="Inviwo example" />
+								<!--<span class="photoinfo">Inviwo volume rendering of cryo-EM density map of a feline calicivirus.</p> -->
+							</div>
+							<div class="abstract"><strong>Abstract:</strong> 
+								Inviwo is a rapid prototyping framework for visualizing spatial and abstract data. In this tutorial, 
+								we show how Inviwo can be utilized for easily creating visualizations in the biomedical domain. 
+								We provide an overview of the concepts used in Inviwo like its visual network editor and the associated data flow paradigm. 
+								Several hands-on examples illustrate how to import data and build your own visualization networks. 
+								The tutorial is tailored to beginners – no prior experience with the framework is necessary.
+								Inviwo is available at <a href="https://inviwo.org">https://inviwo.org</a> and <a href="https://github.com/inviwo/inviwo">Github</a>.
+							</div>
+					
+							<!--<div class="bio">{{ speaker.bio }}</div>-->
+
+							<div class="bio-no-photo"> <a href="mailto:martin.falk@liu.se"><strong>Martin Falk</strong></a>
+								is an Associate Professor in the Scientific Visualization Group at Linköping University. 
+								He received his Ph.D. degree (Dr.rer.nat.) from the University of Stuttgart in 2013. 
+								His research focuses on the development and utilization of visualization techniques, like volume rendering, 
+								topological analysis, and GPU-based methods in general, tailored to specific applications in various application 
+								domains including cryo-EM, material science, plasma physics as well as the medical domain. He is also a core 
+								developer of the visualization framework Inviwo.</div>
 						</div>
-						{% endif %}
-					</div> 
-					{% endif %}	
-				{% endfor %}
-			{% endfor %}	
+						</div>
+
+						<br/>
+						<div class="speaker" id="Altair">
+						<div class="first-line">							
+							<span class="title">Tutorial on Vega-Altair: Declarative Visualization in Python</span><br/>
+							<span class="slot">Time: 3.5 hours, precise time TBA </span>
+						</div>
+						<div class="name">Laura Garrison, Pere-Pau Vázquez</div>
+						
+						<br/>
+
+						<div class="details">
+							<div class="photo">
+								<img src="/2025/images/program/vega.png" atl="vega altair example" />
+							<!--<span class="photoinfo">Examplary visualization in Vega-Altair.</p> -->
+							</div>
+							<div class="abstract"><strong>Abstract:</strong> 
+								Vega-Altair is a declarative visualization library for Python. Its simple, friendly and consistent API, built on top of 
+								the powerful Vega-Lite grammar, empowers you to spend less time writing code and more time exploring your data.
+								Lear more at <a href="https://altair-viz.github.io/">https://altair-viz.github.io/</a>.
+							</div>
+					
+							<!--<div class="bio">{{ speaker.bio }}</div>-->
+
+							<div class="bio-no-photo"> <a href="https://www.laura-garrison.com/"><strong>Laura Garrison</strong></a>
+								is an associate professor (tenure-track) of visualization in the Department of Informatics at the University of Bergen, 
+								and a trained medical illustrator. With her team, she studies processes and assumptions designers make when crafting 
+								visualizations, and their impact on audience engagement and behavior, with a special interest in the health and life 
+								science domains. For her work on multiscale visualization of human physiology, she was awarded the Dirk Bartz Prize 
+								for Visual Computing in Medicine in 2023 and the Karl-Heinz Höhne (MedVis) Award in 2021. Prior to her PhD, she worked 
+								as a medical artist and content director in medical education technology start-ups in Chicago, Silicon Valley, 
+								and New York City.</div>
+
+								<div class="bio-no-photo"> <a href="https://www.cs.upc.edu/~ppau/"><strong>Pere-Pau Vázquez</strong></a>
+									is an associate professor at Universitat Politècnica de Catalunya. He holds a PhD in software (computer graphics) 
+									and is currently affiliated to the ViRVIG (visualization, virtual reality and graphical interaction) group and the 
+									CREB center (center for research in biomedical engineering). His current interests are scientific visualization, 
+									information visualization, virtual reality, and applications of deep learning to visualization.
+
+									</div>
+						</div>
+						</div> 
+						
+
+						<br/>
+						<div class="speaker" id="Networking">
+						<div class="first-line">							
+							<span class="title">Collaboration & Networking</span><br/>
+							<span class="slot">Time: ~1 hour, precise time TBA </span>
+						</div>
+						<div class="name">Organizers</div>
+						
+						<br/>
+
+						<div class="details">
+							
+							<div class="abstract"> 
+								One of the best and most important aspects of summer schools is meeting new people. We hope that this one 
+								will not be an exception. The school is open to attendees with diverse expertise/interest areas spanning biology, medicine, and visualization.
+							   This means there is a uniques opportunity to learn from one another, look at the biomedvis problems from different perspectives, and 
+								maybe even build future collaborations. In this session, you will get a chance to discuss and work together with fellow
+								summer school attendees on biomedical visualization problems either brought by participants themselves or provided by organizers.
+							</br>
+							Note: Since the nature of this session strongly depends on the expertise/interest areas of the attendees, it is subject to change. We will tailor the contents of the session 
+							and activities to the profile of registered attendees.
+							</div>
+					
+							<!--<div class="bio">{{ speaker.bio }}</div>-->
+						</div>
 			</div>
 		</div>
       </div>

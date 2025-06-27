@@ -10,21 +10,21 @@ intro_image_hide_on_mobile: true
 
 We announce the fifth Summer School on Biological and Medical Visualization: the **Bio+Med+Vis Summer School**!
 
-The Summer School will be held on **September 30th, 2025 in Delft, The Netherlands**. The event is collocated with the EG VCBM conference (October 2nd-3rd) and VCBM Fachgruppen Meeting (October 1st) in Delft, The Netherlands. Participants can anticipate excellent **talks and practical tutorials**, given by experts in Biological and Medical Visualization.
+The Summer School will be held on **September 30th, 2025 in Delft, The Netherlands**. The event is collocated with the [EG VCBM conference](http://vcbm.org/) (October 2nd-3rd) and VCBM Fachgruppen Meeting (October 1st) in Delft, The Netherlands. Participants can anticipate excellent **talks and practical tutorials**, given by experts in Biological and Medical Visualization.
 
 The Summer School is primarily targeting M.Sc. and Ph.D. students, but anyone who wants to learn more about principles and challenges in visualization for Life Sciences applications is welcome! No preliminary knowledge of Bio+Medical visualization is necessary.
 
-The registration for the Summer School is **free of charge** and it will provide access to an educational platform, where all materials will be available afterward. Note that you can attend only the Summer School if you do not wish to attend VCBM which charges additional fees.
+The registration for the Summer School is **free of charge** and it will provide access to an educational platform, where all materials will be available afterward. Note that you can attend only the Summer School if you do not wish to attend VCBM which charges additional fees or you can apply for [EG Widening Participation Scholarship](https://conferences.eg.org/vcbm2025/eg-widening-participation-scholarships/) to attend the full event.
 
 The students can obtain a certificate of attendance. Based on the rules of the student’s home institution, the participant may be able to obtain ECTS points for participating at the Bio+Med+Vis School. However, as different institutions have different requirements, it is impossible for us to unify this process. Therefore, we are leaving it up to the discretion of the mentor/supervisor/institution to decide granting ECTS for participation at the Bio+Med+Vis School.
 
 We are looking forward to seeing you at the Bio+Med+Vis Summer School! 
 
 [The Organization Team](https://biomedvis.github.io/2025/team/): 
-Jan Byška, Katarína Furmanová, Barbora Kozlíková, Renata Raidou
+Katarína Furmanová, Jan Byška
 
 <!--
-Ingrid Hotz, Daniel Jönsson, Monique Meuschke, Bernhard Preim
+Ingrid Hotz, Daniel Jönsson, Monique Meuschke, Bernhard Preim, Barbora Kozlíková, Renata Raidou
 -->
 
 This event is endorsed by:

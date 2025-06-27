@@ -5,7 +5,7 @@ draft: false
 image: "images/team/katarina-furmanova.jpg"
 jobtitle: "Organization Committee"
 weburl: "https://www.muni.cz/en/people/374538-katarina-furmanova"
-weight: 2
+weight: 1
 layout: team
 promoted: true
 ---
