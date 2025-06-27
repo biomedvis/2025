@@ -9,7 +9,7 @@ main:
     url: "/team/"
     weight: 3
   - name: "Registration"
-    url: ""
+    url: "https://forms.gle/SR6hxCMRKNr2Vy1D7"
     weight: 4
   - name: "Contact"
     url: "/contact/"
@@ -23,7 +23,7 @@ footer:
     url: "/"
     weight: 1
   - name: "Registration"
-    url: ""
+    url: "https://forms.gle/SR6hxCMRKNr2Vy1D7"
     weight: 2  
   - name: "Contact"
     url: "/contact/"

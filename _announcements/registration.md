@@ -5,7 +5,8 @@ featured: true
 school: true
 weight: 1
 layout: announcement
-description: Registration will open soon.
+description: Find the registration info here.
 ---
 
-Registration will open soon.
+To register, pleas fill in <a href="https://forms.gle/SR6hxCMRKNr2Vy1D7/">this form</a>.
+Registration is free of charge.
