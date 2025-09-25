@@ -21,7 +21,7 @@ The students can obtain a certificate of attendance. Based on the rules of the s
 We are looking forward to seeing you at the Bio+Med+Vis Summer School! 
 
 [The Organization Team](https://biomedvis.github.io/2025/team/): 
-Katarína Furmanová, Jan Byška
+Katarína Furmanová, Thomas Höllt, Jan Byška
 
 <!--
 Ingrid Hotz, Daniel Jönsson, Monique Meuschke, Bernhard Preim, Barbora Kozlíková, Renata Raidou
